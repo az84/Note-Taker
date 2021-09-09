@@ -14,17 +14,17 @@ app.use(express.static('public'));
 
 // GET Route
 app.get('/', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/notes.html'))
+  res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
 // GET Route for index.html page
 app.get("/notes", function(req, res) {
-  res.sendFile(path.join(__dirname, "public/index.html"));
+  res.sendFile(path.join(__dirname, "public/notes.html"));
 });
 
 // GET route using DB.JSON file
 app.get("/api/notes", function(req, res) {
-  res.sendFile(path.join(__dirname, "db.json"));
+  res.sendFile(path.join(__dirname,"./db/db.json" ));
 });
 
 // Creating POST route- takes JSON input, "title" "text" and adds a new note object to the db.json file
