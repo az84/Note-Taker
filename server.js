@@ -29,33 +29,32 @@ app.get("/api/notes", (req, res) =>
   res.sendFile(path.join(__dirname,"./db/db.json" ))
 );
 
-// Creating POST route- takes JSON input, "title" "text" and adds a new note object to the db.json file
+// GET route using DB.JSON file
+app.get("/api/notes", (req, res) =>
+  res.sendFile(path.join(__dirname,"./db/db.json" ))
+);
+
 app.post("/api/notes", (req, res) => {
-  const note = req.body;
-  const noteList = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
-  note.id = uuid.v4();
-  // const noteArr = (noteList.length).toString();
-      noteList.push(note);
-      fs.writeFile( "./db/db.json", JSON.stringify(noteList, null, 2), function(err) {
-        if (err) throw err;
-      })
-      res.json(note);
-      
-  });
+  const createNote = req.body;
+  const noteArr = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+  createNote.id =  uuid.v4();
 
-// Creates DELETE function
+  noteArr.push(createNote);
+  res.json(noteArr);
+  fs.writeFileSync("./db/db.json", JSON.stringify(noteArr));
+ 
+})
+
+//delete
 app.delete("/api/notes/:id", function(req, res) {
-  const delNote = req.params.id;
+  const remNote = req.params.id;
   fs.readFile(path.join(__dirname, "./db/db.json"), (err, data) => {
-    if (err) throw err;
       const notes = JSON.parse(data);
-
-      const delArray = notes.filter(note => {
-          return note.id !== delNote
+      const notesArray = notes.filter(delNote => {
+          return delNote.id !== remNote
       });
-      fs.writeFile('./db/db.json', JSON.stringify(delArray), (err, data) => {
-        if (err) throw err;
-          res.json(delArray) 
+      fs.writeFile('./db/db.json', JSON.stringify(notesArray), (err, data) => {
+          res.json(notesArray) 
 
       });
   });
