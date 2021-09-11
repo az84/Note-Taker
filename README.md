@@ -1,4 +1,9 @@
-# 11 Express.js: Note Taker
+# Note Taker
+
+## License 
+This project is covered under the MIT License.
+    
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Your Task
 
@@ -6,6 +11,7 @@
 
 The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
+Application: https://blooming-oasis-67050.herokuapp.com/
 
 ## Acceptance Criteria
 
@@ -41,8 +47,7 @@ The following API routes should be created:
 
 * `POST /api/notes` should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
 
-
- This application offers that functionality on the front end. As a bonus, try to add the DELETE route to the application using the following guideline:
+This application offers that functionality on the front end. As a bonus, try to add the DELETE route to the application using the following guideline:
 
 * `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
 
