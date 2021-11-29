@@ -5,15 +5,15 @@ This project is covered under the MIT License.
     
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Your Task
+## Summary
 
- Assignment is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+An application that can be used to write, save, and delete notes. It will retrieve note data from a JSON file.. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
 
 The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
-Application: https://blooming-oasis-67050.herokuapp.com/
+Link to the website deployed on Heroku: https://blooming-oasis-67050.herokuapp.com/
 
-## Acceptance Criteria
+## User Story
 
 ```
 GIVEN a note-taking application
@@ -31,7 +31,7 @@ WHEN I click on the Write icon in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
 ```
 
-## Getting Started
+## Set Up
 
 On the back end, the application should include a `db.json` file that will be used to store and retrieve notes using the `fs` module.
 
@@ -51,7 +51,11 @@ This application offers that functionality on the front end. As a bonus, try to 
 
 * `DELETE /api/notes/:id` should receive a query parameter that contains the id of a note to delete. To delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
 
+Contact:
 
+## Contact
+- [Github](https://github.com/az84)
+- [LinkedIn](https://www.linkedin.com/in/alina-z-092703199/)
 
 
 
